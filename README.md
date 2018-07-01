@@ -80,3 +80,29 @@ I'm going to set up the skeleton of the app with "express --ejs app", which crea
 ### 2) Basic static pages and routes
 
 Let's set up our basic static pages (for the input forms) and dynamic page templates (for our responses). I'll add the skeleton css link in our main template, add a main container, and pull the default junk out. I'll grab some images from the noun project for our main link buttons and put them in /img. We'll go with setting up a static index page with our icons, and pull out the default index render route.
+
+### 3) Set up first route
+
+Judging by the user stories, we're going to need to set up the following RESTful routes:
+
+* GET /sumo - get a list of sumo wrestlers
+* GET /match - get a list of matches
+* GET /sumo/:id - get info for a sumo wrestler
+* GET /match/:id - get info for a match
+* POST /sumo - create a new sumo wrestler with {id, name, weight}
+* POST /match - create a new match with {date, eastid, westid, winner}
+* PUT /sumo/:id - update sumo info with {name, weight}
+* PUT /match/:id - update match with {date, eastid, westid, winner}
+* DELETE /sumo/:id - delete a sumo, if they're not in a match
+* DELETE /match/:id - delete a match
+
+and the following static(ish) pages to set up requests for those routes:
+
+* GET / - display index page with sumo and match links
+* GET /sumo/new - display form for creating a new wrestler
+* GET /match/new - display form for creating a new match
+* GET /sumo/:id/edit - display edit form for a sumo wrestler
+* GET /match/:id/edit - display edit form for a match
+
+That seems like a lot! So, let's focus on setting up our first route, GET /sumo, which will return our list of wrestlers. We haven't set up a database yet, so we'll just set up a dummy object for that.
+
