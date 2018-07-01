@@ -77,4 +77,6 @@ I'll do a quick walkthrough of how we build the app here. I'm going to go fast, 
 
 I'm going to set up the skeleton of the app with "express --ejs app", which creates our app directory with some stub files and directories in it. I'm going to move those back down to our main directory and clean them up a bit before we start. Do an npm install to get our modules in, and npm start to make sure everything's cool by hitting localhost:3000. (Make sure node_modules is in your .gitignore, at least, too.)
 
-### 2) 
+### 2) Basic static pages and routes
+
+Let's set up our basic static pages (for the input forms) and dynamic page templates (for our responses). I'll add the skeleton css link in our main template, add a main container, and pull the default junk out. I'll grab some images from the noun project for our main link buttons and put them in /img. We'll go with setting up a static index page with our icons, and pull out the default index render route.

@@ -6,3 +6,13 @@ body {
 a {
   color: #00B7FF;
 }
+
+.icon {
+  display: inline-block;
+  border: 1px solid black;
+  width: 45%;
+}
+
+.icon img {
+  width: 100%;
+}
