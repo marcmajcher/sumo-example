@@ -69,3 +69,10 @@ You should create migrations for your database tables, and seed them with the fo
 | 2015-12-02 | 5    | 3    | East   |
 | 2016-07-04 | 2    | 4    | East   |
 
+## Implementation
+
+I'll do a quick walkthrough of how we build the app here. I'm going to go fast, and assume a bunch of stuff, so hang on.
+
+### 1) Scaffolding the application
+
+I'm going to set up the skeleton of the app with "express --ejs app", which creates our app directory with some stub files and directories in it. I'm going to move those back down to our main directory and clean them up a bit before we start. Do an npm install to get our modules in, and npm start to make sure everything's cool by hitting localhost:3000. (Make sure node_modules is in your .gitignore, at least, too.)
