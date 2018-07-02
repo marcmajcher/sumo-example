@@ -120,3 +120,6 @@ Cool, so, now we've got our sample data, let's do something with it. We set up e
 
 Right now, I'm just going to copy the index template to our new template, wrestlers.ejs. (There's a better way to do this, which I'll probably talk about later.) We just put in <%= data %> to make sure it works, and tell res.render to send along the data, and an appropriate title. Once we see that that works, we can use a plain old loop to create the data and display our data on the rendered page. NICE.
 
+### 5) Creating our database
+
+Okay, time to get to the bottom of this stack. We're going to create a database called "sumo-example", with two tables in it, "wrestlers" and "matches", with columns according to the data above. First, we'll create a knexfile.js with knex init, then edit it a bit to make it work with our postgres db. first we'll set up the database with createdb from the command line, and then we'll do two migrations, one for each table. Oh yeah, AFTER we install the pg and knex node modules. Then, we run knex migrate:latest, and see what we've got. If they look good, let's go on to the next step.
