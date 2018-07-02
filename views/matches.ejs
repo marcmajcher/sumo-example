@@ -25,16 +25,19 @@
         </tr>
       </thead>
       <tbody>
-        <% for (let match of data) { %>
+        <% for (let match of data) { 
+            const matchDate = new Date(match.date);%>
           <tr>
             <td>
-              <a href="/match/<%=match.id%>"><%= match.date %></a>
+              <a href="/match/<%=match.id%>">
+                <%= `${matchDate.getMonth()+1}/${matchDate.getDate()}/${matchDate.getYear()+1900}` %>
+              </a>
             </td>
-            <td>
-              <%= match.eastid %>
+            <td <%- match.winner === 'east'?'class="winner"':'' %>>
+              <%= match.eastname %>
             </td>
-            <td>
-              <%= match.westid %>
+            <td <%- match.winner === 'west'?'class="winner"':'' %>>
+              <%= match.westname %>
             </td>
             <td>
               <%= match.winner %>

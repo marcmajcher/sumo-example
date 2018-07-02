@@ -16,3 +16,7 @@ a {
 .icon img {
   width: 100%;
 }
+
+.winner {
+  background-color: #99ff99;
+}

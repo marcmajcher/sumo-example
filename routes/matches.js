@@ -7,7 +7,7 @@ const router = express.Router();
 const Match = require('../models/match');
 
 router.get('/', (req, res) => {
-  Match.list().then((data) => {
+  Match.list().then((data) => {    
     res.render('matches', {
       data,
       title: 'Matches',

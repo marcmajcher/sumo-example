@@ -159,4 +159,14 @@ Let's go ahead and do the same thing for the matches as we did for the wrestlers
 * Add select by id method to models
 * Render new pages from route with data for item
 
+### 10) Joining database info
+
+* Display wrestler names instead of ids in matches
+* Change model to do a join instead of just returning all columns
+* Change template to display eastname and westname
+* While we're at it, let's reformat the dates
+* And just for kicks, let's highlight the winner of the match
+
+
+
 
