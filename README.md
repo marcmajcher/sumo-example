@@ -106,3 +106,12 @@ and the following static(ish) pages to set up requests for those routes:
 
 That seems like a lot! So, let's focus on setting up our first route, GET /sumo, which will return our list of wrestlers. We haven't set up a database yet, so we'll just set up a dummy object for that.
 
+I like to create modules to manage data for all of my resources (or "nouns" in your RESTful routes), so I'll put those in a models directory, starting with the Wrestler class. This way, we can have it return fake data until we get a database connection set up, and change it to work with the db later, and not change the way it interfaces with the rest of the app.
+
+To start, I'm just going to have the wrestler module export one list() method. Since we'll be getting stuff back from knex later, I'm going to make that return a promise, so it'll behave the same. I'll import our wrestler data as a list of objects, since that's what knex will return later, too, hopefully.
+
+Okay, let's write the route! Since it'll be the first route on our wrestler resource, I'll create a new route in /routes/wrestlers.js, and use that to handle all of our /wrestler requests. In that file, I set up a new express Router for our route, and export it. In that route, I'll add a .get handler for our base wrestler route at /, and just have it return a string to see that it's working.
+
+One I know that /wrestler is returning something, anything, I can hook the rest of it up. First, we'll link it from our sweet sumo wrestler icon on the front page. Then I'll require the wrestler model file in our route, and have it grab our sample data and just return that. Does it work? Yeah!
+
+

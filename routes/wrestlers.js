@@ -4,10 +4,12 @@
 
 const express = require('express');
 const router = express.Router();
+const Wrestler = require('../models/wrestler');
 
-/* GET users listing. */
 router.get('/', (req, res) => {
-  res.send('respond with a resource');
+  Wrestler.list.then((data) => {
+    res.send(data);
+  });
 });
 
 module.exports = router;

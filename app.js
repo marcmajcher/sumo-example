@@ -9,8 +9,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 // const favicon = require('serve-favicon');
 
-const routes = require('./routes/index');
-const users = require('./routes/users');
+const wrestlers = require('./routes/wrestlers');
 
 const app = express();
 
@@ -24,8 +23,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+// app.use('/', routes);
+app.use('/wrestler', wrestlers);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
