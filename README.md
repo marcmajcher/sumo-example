@@ -129,3 +129,11 @@ Okay, time to get to the bottom of this stack. We're going to create a database 
 Now that we have tables, let's put stuff in them! We've already got our array of sample data in our wrestler model file, so let's just grab that and move it over to seed the wrestlers table. First, we'll create the seed with knex:seed make, and run it with knex:seed run. 
 
 Now we can update our wrestler model to grab real data! All we do is replace our own Promise that returns data with a knex call to the wrestlers table (after setting up knex in our model module), and like magic, it works exactly the same! You can see that by going into psql and messing with the data, so go do that. I'll wait.
+
+### 7) Hosting on Heroku
+
+So, now that we've got one full-stack web page -> http request -> app server -> database select -> page render cycle done, we can just follow this pattern for the rest of our routes and pages. But before we do that, let's try to get this simple route hosted up on heroku as early as we can. That way, when we add new bits to our application, it'll be as easy as pushing up to our repo to get the new version hosted.
+
+After we create a new application on heroku for our webapp, select github as your deployment method (you have been committing your code to your own repo as you followed along, right?) and tell it the name of your repo. You can then enable automatic deploys from a branch, or manually deploy it. Then view it, and.... application error! Oh noes! Let's take a look at what went wrong. Well, looking at the build logs on heroku, we can see that our NODE_ENV is set to "production", so let's provision a database and set that up in our knextfile.
+
+Under the Resources section, we can provision a Heroku Postgres database add-on by searching for "postgres" in the add-on menu, and installing it. From there, you can click through to the database, and look at the credentials—these are what you'll need to add to a "production" entry in your knexfile.
