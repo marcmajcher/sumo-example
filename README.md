@@ -114,4 +114,9 @@ Okay, let's write the route! Since it'll be the first route on our wrestler reso
 
 One I know that /wrestler is returning something, anything, I can hook the rest of it up. First, we'll link it from our sweet sumo wrestler icon on the front page. Then I'll require the wrestler model file in our route, and have it grab our sample data and just return that. Does it work? Yeah!
 
+### 4) Templates
+
+Cool, so, now we've got our sample data, let's do something with it. We set up express to use ejs for a templating system, so I'm going to hook up our data to display in a simple table using an ejs template. That means I'll have to do a couple of things: create a template for that page, tell the route to render out that template instead of just sending the data back, and make the template loop through our data to display it.
+
+Right now, I'm just going to copy the index template to our new template, wrestlers.ejs. (There's a better way to do this, which I'll probably talk about later.) We just put in <%= data %> to make sure it works, and tell res.render to send along the data, and an appropriate title. Once we see that that works, we can use a plain old loop to create the data and display our data on the rendered page. NICE.
 

@@ -8,7 +8,10 @@ const Wrestler = require('../models/wrestler');
 
 router.get('/', (req, res) => {
   Wrestler.list.then((data) => {
-    res.send(data);
+    res.render('wrestlers', {
+      data,
+      title: 'Sumo Wrestlers',
+    });
   });
 });
 
