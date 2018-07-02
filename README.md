@@ -123,3 +123,9 @@ Right now, I'm just going to copy the index template to our new template, wrestl
 ### 5) Creating our database
 
 Okay, time to get to the bottom of this stack. We're going to create a database called "sumo-example", with two tables in it, "wrestlers" and "matches", with columns according to the data above. First, we'll create a knexfile.js with knex init, then edit it a bit to make it work with our postgres db. first we'll set up the database with createdb from the command line, and then we'll do two migrations, one for each table. Oh yeah, AFTER we install the pg and knex node modules. Then, we run knex migrate:latest, and see what we've got. If they look good, let's go on to the next step.
+
+### 6) Pulling real data from the database
+
+Now that we have tables, let's put stuff in them! We've already got our array of sample data in our wrestler model file, so let's just grab that and move it over to seed the wrestlers table. First, we'll create the seed with knex:seed make, and run it with knex:seed run. 
+
+Now we can update our wrestler model to grab real data! All we do is replace our own Promise that returns data with a knex call to the wrestlers table (after setting up knex in our model module), and like magic, it works exactly the same! You can see that by going into psql and messing with the data, so go do that. I'll wait.
