@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 // const favicon = require('serve-favicon');
 
 const wrestlers = require('./routes/wrestlers');
+const matches = require('./routes/matches');
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', routes);
 app.use('/wrestler', wrestlers);
+app.use('/match', matches);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');

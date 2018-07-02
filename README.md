@@ -137,3 +137,17 @@ So, now that we've got one full-stack web page -> http request -> app server -> 
 After we create a new application on heroku for our webapp, select github as your deployment method (you have been committing your code to your own repo as you followed along, right?) and tell it the name of your repo. You can then enable automatic deploys from a branch, or manually deploy it. Then view it, and.... application error! Oh noes! Let's take a look at what went wrong. Well, looking at the build logs on heroku, we can see that our NODE_ENV is set to "production", so let's provision a database and set that up in our knextfile.
 
 Under the Resources section, we can provision a Heroku Postgres database add-on by searching for "postgres" in the add-on menu, and installing it. From there, you can click through to the database, and look at the credentials—these are what you'll need to add to a "production" entry in your knexfile. After you add that, push it to your repo, wait for heroku to rebuild and deploy, and... yes! Your index page displays fine, and when you click through to /wrestlers.... nope. Looking at the logs again, it says that it can't find a relation (table) for "wrestlers". That means that we need to manually run our seeds: from the heroku console, do "knex migrate:latest && knex seed:run", and try again. SUCCESS! We're in business, so we can get back to building our app.
+
+### 8) Match data and routes
+
+Let's go ahead and do the same thing for the matches as we did for the wrestlers.
+
+* Build a match.js model module, and mock up our sample data to be returned from a promise
+* Create a template file for the matches view
+* Create a matches route file, and hook it up to /match in your app.js
+* Check to make sure that all works, then set up your database
+* Create a migration file for your match table, and seed it with your sample data
+    * Seeds run in order! Make sure your wrestlers seed runs first, then your matches!
+* Change the match model to query the table with knex, and check it again
+* Link the route to your home page, push your changes, then see the new route work on heroku!
+
