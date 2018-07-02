@@ -167,6 +167,18 @@ Let's go ahead and do the same thing for the matches as we did for the wrestlers
 * While we're at it, let's reformat the dates
 * And just for kicks, let's highlight the winner of the match
 
+### 11) New wrestler form and POST
+
+* Create new wrestler form and serve from /wrestler/new (need to add GET route)
+* Add link to the new page on /wrestler
+* Create js method to post form with fetch and add the js script file to the page
+* Create POST route in wrestlers routes to catch fetch and add wrestler to db
+* Make new create method on wrestler model to handle database interaction
+* Use response on fetch to reset the window location to the main wrestler list page
+
+
+
+
 
 
 
