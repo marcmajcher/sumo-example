@@ -28,7 +28,7 @@
         <% for (let match of data) { %>
           <tr>
             <td>
-              <%= match.date %>
+              <a href="/match/<%=match.id%>"><%= match.date %></a>
             </td>
             <td>
               <%= match.eastid %>

@@ -26,7 +26,7 @@
         <% for (let wrestler of data) { %>
           <tr>
             <td>
-              <%= wrestler.name %>
+              <a href="/wrestler/<%= wrestler.id %>"><%= wrestler.name %></a>
             </td>
             <td>
               <%= wrestler.weight %>

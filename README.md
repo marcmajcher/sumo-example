@@ -27,6 +27,7 @@ These are the things that we would like the application to do.
 * As a user, I need to be able to edit the information for a match
 * As a user, I need to be able to delete a match
 * As a user, I need to be able to delete a wrestler, if they are not associated with a match
+* As a user, I would like to be able to navigate around the site easily
 * As a user, I need to be able to use the application from a hosted URL
 
 ## Sample Data
@@ -150,4 +151,12 @@ Let's go ahead and do the same thing for the matches as we did for the wrestlers
     * Seeds run in order! Make sure your wrestlers seed runs first, then your matches!
 * Change the match model to query the table with knex, and check it again
 * Link the route to your home page, push your changes, then see the new route work on heroku!
+
+### 9) Wrestler and match info pages
+
+* Change list pages to link to individual info route
+* Make info page templates
+* Add select by id method to models
+* Render new pages from route with data for item
+
 

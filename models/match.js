@@ -7,5 +7,6 @@ const config = require('../knexfile')[env];
 const knex = require('knex')(config);
 
 module.exports = {
-    list: knex('matches')
+    list: () => knex('matches'),
+    get: id => knex('matches').where('id', id).first(),
 };
